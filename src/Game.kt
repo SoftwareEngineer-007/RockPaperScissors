@@ -26,5 +26,15 @@ fun getUserChoice(optionsParam: Array<String>): String {
         if (!isValidChoice) println("You must enter a valid choice.")
     }
     return userChoice
+}
 
+
+fun printResult(userChoice: String, gameChoice: String) {
+    val result: String
+    // Determine the result
+    if (userChoice == gameChoice) result = "Tie!"
+    else if ((userChoice == "Rock" && gameChoice == "Scissors") || (userChoice == "Paper" && gameChoice == "Rock") || (userChoice == "Scissors" && gameChoice == "Paper")) result = "You WIN!!!"
+    else result = "You lose!"
+    // Print the result
+    println("You chose $userChoice. I chose $gameChoice. $result")
 }
